@@ -27,3 +27,28 @@ Sample Input:
 78
 Sample Output:C
 '''
+# Function to determine the grade based on marks
+def determine_grade(marks):
+    if marks > 100:
+        return "Invalid Input"
+    elif marks == 100:
+        return "S"
+    elif 90 <= marks < 100:
+        return "A"
+    elif 80 <= marks < 90:
+        return "B"
+    elif 70 <= marks < 80:
+        return "C"
+    elif 60 <= marks < 70:
+        return "D"
+    elif 50 <= marks < 60:
+        return "E"
+    else:  # marks < 50
+        return "F"
+
+# Input reading
+marks = int(input())
+
+# Determine and print the grade
+grade = determine_grade(marks)
+print(grade)
