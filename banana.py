@@ -12,3 +12,29 @@ Sample Input:
 Sample Output:
 Loss : Rs.12.00
 '''
+# Function to calculate profit or loss
+def calculate_profit_or_loss(total_cost, selling_price_per_banana):
+    # Cost per banana
+    cost_per_banana = total_cost / 12
+    # Total selling price for a dozen bananas
+    total_selling_price = selling_price_per_banana * 12
+    
+    # Calculate profit or loss
+    profit_or_loss = total_selling_price - total_cost
+    
+    return profit_or_loss
+
+# Input reading
+total_cost = float(input())
+selling_price_per_banana = float(input())
+
+# Calculate profit or loss
+result = calculate_profit_or_loss(total_cost, selling_price_per_banana)
+
+# Print the result
+if result > 0:
+    print(f"Profit : Rs.{result:.2f}")
+elif result < 0:
+    print(f"Loss : Rs.{abs(result):.2f}")
+else:
+    print("No Profit No Loss")
