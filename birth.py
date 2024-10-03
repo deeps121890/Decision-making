@@ -13,3 +13,22 @@ Sample Input:
 Sample Output:
 38
 '''
+# Function to calculate age
+def calculate_age(birth_year_last_two, current_year_last_two):
+    # Assuming birth year is in the 1900s or 2000s
+    if current_year_last_two >= birth_year_last_two:
+        age = current_year_last_two - birth_year_last_two
+    else:
+        age = (100 + current_year_last_two) - birth_year_last_two  # For cases where the year crosses from 20xx to 21xx
+    
+    return age
+
+# Input reading
+birth_year = int(input())
+current_year = int(input())
+
+# Calculate age
+age = calculate_age(birth_year, current_year)
+
+# Print the result
+print(age)
