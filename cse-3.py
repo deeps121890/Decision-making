@@ -17,3 +17,32 @@ Sample Input:
 Sample Output:
 L1
 '''
+# Function to find the most suitable lab for 'n' students
+def find_suitable_lab(capacities, num_students):
+    suitable_labs = { 'L1': capacities[0], 'L2': capacities[1], 'L3': capacities[2] }
+    
+    # Filter labs that can accommodate 'n' students
+    possible_labs = {lab: capacity for lab, capacity in suitable_labs.items() if capacity >= num_students}
+    
+    # Find the lab with the maximum capacity among the possible labs
+    if possible_labs:
+        suitable_lab = max(possible_labs, key=possible_labs.get)
+        return suitable_lab
+    else:
+        return None  # In case no lab can accommodate 'n' students
+
+# Input reading
+x = int(input())  # Seating capacity of L1
+y = int(input())  # Seating capacity of L2
+z = int(input())  # Seating capacity of L3
+n = int(input())  # Number of students
+
+# List of lab capacities
+capacities = [x, y, z]
+
+# Find and print the suitable lab
+suitable_lab = find_suitable_lab(capacities, n)
+if suitable_lab:
+    print(suitable_lab)
+else:
+    print("No suitable lab available")
