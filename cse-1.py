@@ -17,3 +17,29 @@ L3
 Sample Output:
 L1
 '''
+# Function to find the lab with minimal seating capacity
+def find_min_capacity_lab(capacities, allocated_lab):
+    # Remove the allocated lab from consideration
+    if allocated_lab in capacities:
+        del capacities[allocated_lab]
+
+    # Find the lab with the minimal capacity
+    min_lab = min(capacities, key=capacities.get)
+    return min_lab
+
+# Input reading
+a = int(input())  # Seating capacity of L1
+b = int(input())  # Seating capacity of L2
+c = int(input())  # Seating capacity of L3
+allocated_lab = input()  # Lab allocated for ACE training
+
+# Create a dictionary of lab capacities
+capacities = {
+    'L1': a,
+    'L2': b,
+    'L3': c
+}
+
+# Find and print the lab with minimal seating capacity
+min_lab = find_min_capacity_lab(capacities, allocated_lab)
+print(min_lab)
